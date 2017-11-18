@@ -51,37 +51,40 @@ run_if: ""
 
 deps:
   brew:
-  - name: git
-  - name: wget
+  - name: npm
   apt_get:
-  - name: git
-  - name: wget
-
+  - name: npm
 
 toolkit:
   bash:
     entry_file: step.sh
 
-
 inputs:
-  - example_step_input: Default Value - you can leave this empty if you want to
+  - token: $DIAWI_TOKEN
     opts:
-      title: "Example Step Input"
-      summary: Summary. No more than 2-3 sentences.
+      title: "API token"
+      summary: Diawi API token
       description: |
-        Description of this input.
+        The API token for Diawi.
 
-        Can be Markdown formatted text.
+        It's free to sign up and get one, just go here: https://dashboard.diawi.com/signup.
+        You create an api token in the profile tab.
       is_expand: true
       is_required: true
-      value_options: []
+
+  - filename: $BITRISE_IPA_PATH
+    opts:
+      title: "ipa/akp/zip file path"
+      summary: The path to the file to upload
+      description: |
+        The path to the file to upload - defaults to an IPA created by a bitrise archive step
+      is_expand: true
+      is_required: true
 
 outputs:
-  - EXAMPLE_STEP_OUTPUT:
+  - DIAWI_UPLOAD_URL:
     opts:
-      title: "Example Step Output"
-      summary: Summary. No more than 2-3 sentences.
+      title: "The URL of the uploaded file"
+      summary: The URL of the uploaded file
       description: |
-        Description of this output.
-
-        Can be Markdown formatted text.
+        The URL of the uploaded file
