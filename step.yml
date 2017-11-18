@@ -60,31 +60,31 @@ toolkit:
     entry_file: step.sh
 
 inputs:
-  - token: $DIAWI_TOKEN
-    opts:
-      title: "API token"
-      summary: Diawi API token
-      description: |
-        The API token for Diawi.
+- api_token: $DIAWI_TOKEN
+  opts:
+    title: "API token"
+    summary: Diawi API token
+    description: |
+      The API token for Diawi.
 
-        It's free to sign up and get one, just go here: https://dashboard.diawi.com/signup.
-        You create an api token in the profile tab.
-      is_expand: true
-      is_required: true
+      It's free to sign up and get one, just go here: https://dashboard.diawi.com/signup.
+      You create an api token in the profile tab.
+    is_expand: true
+    is_required: true
 
-  - filename: $BITRISE_IPA_PATH
-    opts:
-      title: "ipa/akp/zip file path"
-      summary: The path to the file to upload
-      description: |
-        The path to the file to upload - defaults to an IPA created by a bitrise archive step
-      is_expand: true
-      is_required: true
+- filename: $BITRISE_IPA_PATH
+  opts:
+    title: "ipa/akp/zip file path"
+    summary: The path to the file to upload
+    description: |
+      The path to the file to upload - defaults to an IPA created by a bitrise archive step
+    is_expand: true
+    is_required: true
 
 outputs:
-  - DIAWI_UPLOAD_URL:
-    opts:
-      title: "The URL of the uploaded file"
-      summary: The URL of the uploaded file
-      description: |
-        The URL of the uploaded file
+- DIAWI_UPLOAD_URL:
+  opts:
+    title: "The URL of the uploaded file"
+    summary: The URL of the uploaded file
+    description: |
+      The URL of the uploaded file
