@@ -1,4 +1,5 @@
 .bitrise*
 .gows.user.yml
 .DS_Store
+DerivedData
 
