@@ -81,6 +81,15 @@ inputs:
     is_expand: true
     is_required: true
 
+- password: $DIAWI_UPLOAD_PASSWORD
+  opts:
+    title: "Password"
+    summary: "Users will have to provide this to download the app from Diawi. No value in here will allow anyone to download the app."
+    description: "Users will have to provide this to download the app from Diawi. No value in here will allow anyone to download the app."
+    is_expand: true
+    is_required: false
+    is_sensitive: true
+
 outputs:
 - DIAWI_UPLOAD_URL:
   opts:
