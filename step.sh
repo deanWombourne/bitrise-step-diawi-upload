@@ -20,6 +20,6 @@ cmd="${cmd} ${api_token} ${filename}"
 echo "Running command '${cmd}'"
 
 # Run the command
-diawi_url=$(cmd)
+diawi_url=eval $cmd
 echo Diawi Upload URL is $diawi_url
 envman add --key DIAWI_UPLOAD_URL --value "${diawi_url}"
