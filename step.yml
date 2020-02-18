@@ -60,7 +60,7 @@ toolkit:
     entry_file: step.sh
 
 inputs:
-- api_token: $DIAWI_TOKEN
+- api_token:
   opts:
     title: "API token"
     summary: Diawi API token
@@ -71,8 +71,9 @@ inputs:
       You create an api token in the profile tab.
     is_expand: true
     is_required: true
+    is_sensitive: true
 
-- filename: $BITRISE_IPA_PATH
+- filename:
   opts:
     title: "ipa/akp/zip file path"
     summary: The path to the file to upload
@@ -81,7 +82,7 @@ inputs:
     is_expand: true
     is_required: true
 
-- password: $DIAWI_UPLOAD_PASSWORD
+- password:
   opts:
     title: "Password"
     summary: "Users will have to provide this to download the app from Diawi. No value in here will allow anyone to download the app."
